@@ -5,7 +5,7 @@ save favorites. Built with **React (Create React App)**, **Redux Toolkit**, **Ta
 **Material-UI** and **Axios** on the [TMDB](https://www.themoviedb.org/) API.
 
 **Live demo:** _add your Vercel URL here_
-**Demo login:** `demo` / `movie123` (mock authentication, see Known limitations)
+**Demo login:** `anasriza` / `RizaAnas2003` (mock authentication, see Known limitations)
 
 ## Features
 
