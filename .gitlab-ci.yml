@@ -1,0 +1,10 @@
+image: node:20
+stages: [check]
+check:
+  stage: check
+  cache:
+    paths: [node_modules/]
+  script:
+    - npm ci
+    - npm run test:ci
+    - npm run build # GitLab sets CI=true, so lint warnings fail the pipeline

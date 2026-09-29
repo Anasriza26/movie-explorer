@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---------- Base (replaces Tailwind's preflight, which is disabled) ---------- */
+@layer base {
+  *, ::before, ::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  html.dark { color-scheme: dark; }
+  body {
+    margin: 0;
+    font-family: 'DM Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    background: #f4f6fa;
+    color: #12151d;
+  }
+  html.dark body { background: #0c0e13; color: #e8ebf3; }
+  h1, h2, h3, h4, p, ul, figure { margin: 0; }
+  ul { padding: 0; list-style: none; }
+  a { color: inherit; text-decoration: none; }
+  img { display: block; max-width: 100%; }
+  button, input, select { font: inherit; color: inherit; }
+  button { cursor: pointer; }
+  /* Respect users who ask for less motion */
+  @media (prefers-reduced-motion: reduce) {
+    *, ::before, ::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  }
+}
+
+/* ---------- Reusable component classes ---------- */
+@layer components {
+  .container-page { @apply mx-auto w-full max-w-screen-2xl px-4 sm:px-6 lg:px-10; }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg border border-transparent px-4 py-2.5
+      text-sm font-bold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand
+      focus-visible:ring-offset-2 focus-visible:ring-offset-transparent disabled:cursor-not-allowed disabled:opacity-60;
+  }
+  .btn-primary { @apply bg-brand text-ink-950 hover:bg-brand-dark; }
+  .btn-outline { @apply border-slate-300 bg-transparent hover:bg-slate-200/60 dark:border-ink-600 dark:hover:bg-ink-800; }
+  .btn-glass { @apply border-white/40 bg-white/10 text-white hover:bg-white/20; }
+
+  .icon-btn {
+    @apply relative inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border-0 bg-transparent
+      transition-colors hover:bg-slate-200/70 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand dark:hover:bg-ink-800;
+  }
+
+  .field {
+    @apply w-full rounded-lg border border-slate-300 bg-white px-3 py-2.5 text-sm text-slate-900
+      placeholder:text-slate-400 focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/40
+      disabled:opacity-60 dark:border-ink-600 dark:bg-ink-900 dark:text-slate-100;
+  }
+  .field-label { @apply mb-1 block text-xs font-bold text-slate-600 dark:text-slate-400; }
+
+  .heading { @apply font-display text-2xl font-extrabold tracking-tight sm:text-3xl; }
+}
