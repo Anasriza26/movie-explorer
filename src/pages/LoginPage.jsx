@@ -10,7 +10,6 @@ import {
   selectAuthStatus,
   selectUser,
 } from "../features/auth/authSlice";
-import { DEMO_CREDENTIALS } from "../features/auth/authApi";
 import { getSafeRedirect, validateLogin } from "../utils/validation";
 
 // The one memorable detail: a strip of marquee bulbs.
